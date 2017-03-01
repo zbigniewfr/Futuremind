@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Futuremind</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="multi_select_list_preference_default_value" />
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example settings for Notifications -->
+    <string name="pref_header_notifications">Notifications</string>
+
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
+    <string name="web_view">Web View</string>
+    <string name="wrong_url">Wrong URL!</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_web_view">WebViewActivity</string>
+</resources>
