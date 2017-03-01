@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements OrdersView, ListA
         if (!orders.isEmpty()) {
             mainActivityFragment.setupView(orders);
             if(webViewFragment != null) {
-                webViewFragment.setupWebView(orders.get(0).getURL());
+                webViewFragment.loadWebsite(orders.get(0).getURL());
             }
         } else {
             refresh();
@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements OrdersView, ListA
     @Override
     public void openWebView(String url) {
         if (webViewFragment != null) {
-            webViewFragment.setupWebView(url);
+            webViewFragment.loadWebsite(url);
         } else {
             Intent i = new Intent(this, WebViewActivity.class);
             i.putExtra("url", url);

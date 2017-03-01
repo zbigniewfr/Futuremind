@@ -25,7 +25,7 @@ public class WebViewActivity extends AppCompatActivity {
             url = extras.getString("url");
         }
 
-        webViewFragment.setupWebView(url);
+        webViewFragment.loadWebsite(url);
     }
 
 }

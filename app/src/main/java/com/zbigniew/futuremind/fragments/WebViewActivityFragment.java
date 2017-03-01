@@ -38,22 +38,30 @@ public class WebViewActivityFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_web_view, container, false);
         unbinder = ButterKnife.bind(this, view);
 
+        setupWebView();
+
         return view;
     }
 
-    public void setupWebView(String url){
-        if(url != null) {
-            webView.getSettings().setJavaScriptEnabled(true);
-            webView.getSettings().setDomStorageEnabled(true);
-            webView.getSettings().setDefaultTextEncodingName("utf-8");
-            webView.loadUrl(url);
-            webView.setWebViewClient(new WebViewClient() {
+    private void setupWebView(){
 
-                @Override
-                public void onPageFinished(WebView view, String url) {
-                    pageLoadProgress.setVisibility(View.GONE);
-                }
-            });
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setDomStorageEnabled(true);
+        webView.getSettings().setDefaultTextEncodingName("utf-8");
+        webView.setWebViewClient(new WebViewClient() {
+
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                pageLoadProgress.setVisibility(View.GONE);
+            }
+        });
+    }
+
+    public void loadWebsite(String url){
+        if(url != null) {
+            pageLoadProgress.setVisibility(View.VISIBLE);
+            webView.loadUrl(url);
+
         }else {
             Toast.makeText(getActivity(), R.string.wrong_url, Toast.LENGTH_LONG).show();
         }
